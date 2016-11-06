@@ -2,7 +2,7 @@ import socket
 from threading import *
 
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-host = '192.168.140.1'
+host = 'localhost'
 print host
 serversocket.bind((host, 80))
    
