@@ -4,7 +4,7 @@ from threading import *
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 host = 'localhost'
 print host
-serversocket.bind((host, 80))
+serversocket.bind((host, 2000))
    
 class client(Thread):
     def __init__(self, socket, address):
