@@ -20,15 +20,15 @@ function handleEnter(event) {
     switch(event.charCode) {
         case 0:
             if (document.getElementById('chat').value != '') {
-                sendMessage(clientSocket.id + ': ' + document.getElementById('chat').value);
+                sendMessage(document.getElementById('chat').value);
                 document.getElementById('chat').value = '';
             }
             break;
     }
 }
 function sendMessage(message) {
-    document.getElementById('output_text').value += message + '\n';
-    clientSocket.send(message);
+    document.getElementById('output_text').value += 'Me: ' + message + '\n';
+    clientSocket.send('Friend: ' + message);
 }
 </script>
 </head>
