@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>The client app</title>
+<script>
+function openConnection() {
+    clientSocket = new WebSocket("
+}
+
+function sendMessage(message) {
+    clientSocket.send(message);
+}
+</script>
+</head>
+
+<body>
+<textarea width="600px" height="400px">
+
+</textarea>
+<form onsubmit="alertme();">
+<input type="text" /> <br/>
+<input type="submit" />
+</form>
+</body>
+
+</html>
