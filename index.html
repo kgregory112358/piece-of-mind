@@ -1,12 +1,17 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 
 <html>
 
 <head>
 <title>The client app</title>
 <script>
+var clientSocket;
 function openConnection() {
-    clientSocket = new WebSocket("
+    clientSocket = new WebSocket('ws://127.0.0.1:13254');
+    clientSocket.onopen = function () {
+        alert('opened');
+        sendMessage('Hello!');
+    };
 }
 
 function sendMessage(message) {
@@ -15,14 +20,14 @@ function sendMessage(message) {
 </script>
 </head>
 
-<body>
+<body onload="openConnection();">
 <textarea width="600px" height="400px">
-
 </textarea>
-<form onsubmit="alertme();">
+<form>
 <input type="text" /> <br/>
-<input type="submit" />
+<input type="button" onrelease="sendMessage('asd');" />
 </form>
+<a href="other_page.html"></a>
 </body>
 
 </html>
